@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>🏆 Control de Partidos - Torneo de Tenis de Mesa</title>
+  <link rel="stylesheet" href="css/styles.css?v=20261017_5">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220%22%20width=%22100%22%20height=%22100%22><text y=%22.9em%22 font-size=%2290%22>🏓</text></svg>">
+</head>
+<body>
+
+  <!-- HEADER PRINCIPAL -->
+  <header class="main-header">
+    <div class="header-top">
+      <div class="brand">
+        <span class="brand-icon">🏓</span>
+        <div class="brand-text">
+          <h1>Control de Partidos - Torneo de Tenis de Mesa</h1>
+          <p>
+            <span class="status-badge" id="net-status-badge">
+              <span class="status-dot"></span> Sincronizado en Vivo
+            </span>
+            <span id="active-devices-count" style="display:none;"></span>
+          </p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- Botón para abrir modal de conexión de celulares en red LAN -->
+        <button class="btn btn-cyan" onclick="abrirModalRed()" title="Conectar celular o tablet por Wi-Fi">
+          📱 Conectar Celular / QR
+        </button>
+
+        <!-- Menú de Acciones del Torneo -->
+        <button class="btn btn-outline" onclick="abrirModalNuevoTorneo()" title="Iniciar un nuevo torneo">
+          ✨ Nuevo Torneo
+        </button>
+
+
+        <button class="btn btn-outline" onclick="window.print()" title="Imprimir tabla y podio">
+          🖨 Imprimir
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- BARRA DE PESTAÑAS (TABS) -->
+  <nav class="tabs-nav">
+    <div class="tabs-container">
+      <button class="tab-btn active" onclick="cambiarPestana('participantes')" id="tab-nav-participantes">
+        👥 Participantes
+      </button>
+      <button class="tab-btn" onclick="cambiarPestana('mesas')" id="tab-nav-mesas">
+        🏓 Fase de Grupos
+      </button>
+      <button class="tab-btn" onclick="cambiarPestana('playoffs')" id="tab-nav-playoffs">
+        ⚔️ Cuadro Final (Llaves)
+      </button>
+      <button class="tab-btn" onclick="cambiarPestana('tv')" id="tab-nav-tv">
+        📊 Puntos
+      </button>
+    </div>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="main-content">
+
+    <!-- ==================== TAB 1: PODIO Y POSICIONES ==================== -->
+    <section id="pane-podio" class="tab-pane">
+      
+      <!-- Podio de Honor -->
+      <div class="podium-section">
+        <h2 class="section-title">🏆 Podio de Campeones</h2>
+        <div class="podium-grid" id="podium-container">
+          <!-- Renderizado dinámicamente con las fotos de los ganadores -->
+        </div>
+      </div>
+
+      <!-- Tabla de Posiciones General y Puntos -->
+      <div class="table-card">
+        <div class="table-card-header">
+          <h2>TABLA DE POSICIONES GENERAL Y PUNTOS</h2>
+          <span style="font-size: 0.85rem; opacity: 0.9;">Orden: Puntos &gt; Partidos Ganados &gt; Dif. Sets</span>
+        </div>
+        <div class="table-responsive">
+          <table class="excel-table">
+            <thead>
+              <tr>
+                <th style="width: 50px;">Pos</th>
+                <th style="text-align: left; padding-left: 14px;">Jugador</th>
+                <th style="width: 70px;">PJ</th>
+                <th style="width: 70px;">G</th>
+                <th style="width: 70px;">P</th>
+                <th style="width: 70px;">FF</th>
+                <th style="width: 80px;">Sets (+)</th>
+                <th style="width: 80px;">Sets (-)</th>
+                <th style="width: 75px;">Dif Sets</th>
+                <th style="width: 85px;">Puntos</th>
+              </tr>
+            </thead>
+            <tbody id="standings-table-body">
+              <!-- Filas generadas dinámicamente -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ==================== TAB 2: MESAS (FASE DE GRUPOS) ==================== -->
+    <section id="pane-mesas" class="tab-pane">
+      <div class="info-banner" style="display: flex; flex-direction: column; gap: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+          <div class="info-banner-left">
+            <span style="font-size: 1.4rem;">ℹ️</span>
+            <div class="info-banner-text">
+              <h3>Fase de Grupos (Mesas 1 a 6 por grupo)</h3>
+              <p>Al mejor de 5 sets (gana el primero con 3 sets). Escribe <strong>FF</strong> o usa el botón <strong>W.O.</strong> para no-presentación.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Barra de herramientas: Filtros, Buscador y Diseño -->
+        <div class="toolbar-row">
+          <!-- Filtro rápido por grupo -->
+          <div class="filter-pills" id="btn-group-filtros">
+            <button class="pill-btn active" onclick="cambiarFiltroGrupo('TODOS', this)">Todos los Grupos</button>
+            <button class="pill-btn" onclick="cambiarFiltroGrupo('A', this)">Grupo A</button>
+            <button class="pill-btn" onclick="cambiarFiltroGrupo('B', this)">Grupo B</button>
+            <button class="pill-btn" onclick="cambiarFiltroGrupo('C', this)">Grupo C</button>
+            <button class="pill-btn" onclick="cambiarFiltroGrupo('D', this)">Grupo D</button>
+          </div>
+
+          <!-- Buscador de jugador o mesa para cargar resultados rápido -->
+          <div class="search-box-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="input-busqueda-jugador" class="search-input" 
+              placeholder="Buscar jugador o mesa (ej: Víctor, Hugo, Mesa 2)..." 
+              oninput="filtrarPartidosEnTiempoReal(this.value)">
+            <button class="search-clear-btn" id="btn-clear-search" onclick="limpiarBusqueda()" style="display:none;" title="Limpiar búsqueda">✕</button>
+          </div>
+
+          <!-- Selector de Diseño / Columnas -->
+          <div class="layout-pills">
+            <span style="font-size: 0.76rem; font-weight: 700; color: #64748b; margin-right: 2px;">Vista:</span>
+            <button class="pill-btn" id="btn-layout-auto" onclick="cambiarLayoutGrupos('auto')" title="Se adapta automáticamente al tamaño de la pantalla">Auto</button>
+            <button class="pill-btn active" id="btn-layout-2col" onclick="cambiarLayoutGrupos('2col')" title="2 columnas (2x2 cómodo, no se corta nada)">2 Columnas</button>
+            <button class="pill-btn" id="btn-layout-4col" onclick="cambiarLayoutGrupos('4col')" title="Los 4 grupos en paralelo como en Excel">4 Columnas</button>
+          </div>
+        </div>
+
+        <!-- Indicador de coincidencias de búsqueda -->
+        <div id="search-results-indicator" style="display: none; background: #e0f2fe; color: #0369a1; padding: 6px 12px; border-radius: 6px; font-size: 0.82rem; font-weight: 600;"></div>
+      </div>
+
+      <!-- Contenedor de las 4 columnas de grupos -->
+      <div class="groups-grid grid-2col" id="groups-container">
+        <!-- Renderizado dinámicamente -->
+      </div>
+    </section>
+
+
+    <!-- ==================== TAB 3: CUADRO FINAL (LLAVES) ==================== -->
+    <section id="pane-playoffs" class="tab-pane">
+      <div class="info-banner">
+        <div class="info-banner-left">
+          <span style="font-size: 1.5rem;">⚡</span>
+          <div class="info-banner-text">
+            <h3>Cuadro de Eliminación Directa</h3>
+            <p>Los clasificados avanzan automáticamente al completarse la fase de grupos. Los ganadores de semifinales disputan la Gran Final y los perdedores el 3er Lugar.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bracket-wrapper">
+        <div class="bracket-sections" id="playoffs-container">
+          <!-- Renderizado dinámicamente -->
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==================== TAB 4: PARTICIPANTES Y FOTOS ==================== -->
+    <section id="pane-participantes" class="tab-pane active">
+      <div class="info-banner">
+        <div class="info-banner-left">
+          <span style="font-size: 1.5rem;">📷</span>
+          <div class="info-banner-text">
+            <h3>Gestión de Participantes y Fotos</h3>
+            <p>Haz clic en la foto o círculo del participante para subir una imagen o tomar una foto con la cámara de tu celular o tablet.</p>
+          </div>
+        </div>
+        <div>
+          <button class="btn btn-primary" onclick="guardarNombresParticipantes()">
+            💾 Guardar Cambios de Nombres
+          </button>
+        </div>
+      </div>
+
+      <div class="participants-grid" id="participants-container">
+        <!-- Renderizado dinámicamente -->
+      </div>
+
+      <!-- Input de archivo oculto para subir fotos -->
+      <input type="file" id="photo-file-input" accept="image/*" style="display: none;" onchange="procesarFotoSeleccionada(event)">
+    </section>
+
+
+    <!-- ==================== TAB 5: MODO TV / PANTALLA GIGANTE ==================== -->
+    <section id="pane-tv" class="tab-pane">
+      <div class="tv-mode-container">
+        <div class="tv-title">🏓 Marcador Oficial en Pantalla Gigante</div>
+        <div id="tv-podium-container" class="podium-grid" style="margin-bottom: 30px;"></div>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap: 20px;">
+          <div>
+            <h3 style="color: #38bdf8; margin-bottom: 12px; font-size: 1.2rem;">🏅 Tabla de Posiciones</h3>
+            <div id="tv-standings-container"></div>
+          </div>
+          <div>
+            <h3 style="color: #38bdf8; margin-bottom: 12px; font-size: 1.2rem;">⚔️ Fase Final en Vivo</h3>
+            <div id="tv-playoffs-container"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==================== MODAL: CONEXIÓN RED LAN (QR Y ENLACE) ==================== -->
+  <div class="modal-backdrop" id="modal-red">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>📱 Conectar Celular o Tablet (Red LAN)</h3>
+        <button class="modal-close-btn" onclick="cerrarModalRed()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 0.9rem; color: #475569; margin-bottom: 10px;">
+          Abre la cámara de tu celular o tablet conectado al mismo Wi-Fi y escanea este código QR:
+        </p>
+
+        <!-- Contenedor del código QR generado offline -->
+        <div class="qr-container" id="qr-code-box"></div>
+
+        <p style="font-size: 0.82rem; font-weight: 700; color: #1e293b; margin-bottom: 6px;">
+          O ingresa esta dirección en el navegador de tu celular:
+        </p>
+        <div class="lan-url-box" id="lan-url-text">Cargando dirección...</div>
+
+        <button class="btn btn-cyan btn-sm" onclick="copiarUrlLan()">
+          📋 Copiar Enlace
+        </button>
+
+        <p style="font-size: 0.78rem; color: #64748b; margin-top: 14px;">
+          💡 Cualquier resultado que ingreses desde el celular se verá reflejado en tiempo real en esta pantalla y viceversa.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== MODAL: MARCADOR RÁPIDO PARA CELULAR ==================== -->
+  <div class="modal-backdrop" id="modal-marcador">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="marcador-modal-title">🏓 Marcador Rápido</h3>
+        <button class="modal-close-btn" onclick="cerrarModalMarcador()">&times;</button>
+      </div>
+      <div class="modal-body" style="padding: 16px;">
+        <div style="margin-bottom: 12px; font-weight: 700; color: #475569;" id="marcador-set-selector">
+          Selecciona el Set a modificar:
+          <div style="display: flex; gap: 6px; justify-content: center; margin-top: 8px;" id="marcador-set-buttons">
+            <!-- Botones S1, S2, S3, S4, S5 -->
+          </div>
+        </div>
+
+        <div class="fast-score-box">
+          <div class="fast-score-player">
+            <div class="fast-score-player-name" id="fast-p1-name">Jugador 1</div>
+            <div class="fast-score-counter">
+              <button class="counter-btn" onclick="modificarPuntosRapido(1, -1)">-</button>
+              <div class="counter-value" id="fast-p1-score">0</div>
+              <button class="counter-btn" onclick="modificarPuntosRapido(1, 1)">+</button>
+            </div>
+          </div>
+
+          <div class="fast-score-player">
+            <div class="fast-score-player-name" id="fast-p2-name">Jugador 2</div>
+            <div class="fast-score-counter">
+              <button class="counter-btn" onclick="modificarPuntosRapido(2, -1)">-</button>
+              <div class="counter-value" id="fast-p2-score">0</div>
+              <button class="counter-btn" onclick="modificarPuntosRapido(2, 1)">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div style="width: 100%; margin-top: 16px;">
+          <p style="font-size: 0.78rem; color: #64748b; margin-bottom: 6px; text-align: left; font-weight: 700;">
+            Marcadores rápidos frecuentes:
+          </p>
+          <div class="quick-set-presets">
+            <button class="btn btn-outline btn-sm" style="color: #1e293b; border-color: #cbd5e1;" onclick="aplicarPresetMarcador(11, 9)">11 - 9</button>
+            <button class="btn btn-outline btn-sm" style="color: #1e293b; border-color: #cbd5e1;" onclick="aplicarPresetMarcador(11, 7)">11 - 7</button>
+            <button class="btn btn-outline btn-sm" style="color: #1e293b; border-color: #cbd5e1;" onclick="aplicarPresetMarcador(11, 5)">11 - 5</button>
+            <button class="btn btn-outline btn-sm" style="color: #1e293b; border-color: #cbd5e1;" onclick="aplicarPresetMarcador(11, 3)">11 - 3</button>
+            <button class="btn btn-outline btn-sm" style="color: #1e293b; border-color: #cbd5e1;" onclick="aplicarPresetMarcador(9, 11)">9 - 11</button>
+            <button class="btn btn-outline btn-sm" style="color: #1e293b; border-color: #cbd5e1;" onclick="aplicarPresetMarcador(7, 11)">7 - 11</button>
+            <button class="btn btn-outline btn-sm" style="color: #1e293b; border-color: #cbd5e1;" onclick="aplicarPresetMarcador(5, 11)">5 - 11</button>
+            <button class="btn btn-danger-outline btn-sm" onclick="aplicarPresetFF()">W.O. (FF)</button>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px; display: flex; gap: 10px; width: 100%;">
+          <button class="btn btn-primary" style="flex: 1;" onclick="guardarMarcadorRapido()">
+            ✓ Guardar Set
+          </button>
+          <button class="btn btn-outline" style="color: #475569; border-color: #cbd5e1;" onclick="cerrarModalMarcador()">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== MODAL: NUEVO TORNEO ==================== -->
+  <div class="modal-backdrop" id="modal-nuevo-torneo">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>✨ Opciones de Nuevo Torneo</h3>
+        <button class="modal-close-btn" onclick="cerrarModalNuevoTorneo()">&times;</button>
+      </div>
+      <div class="modal-body" style="text-align: left; gap: 16px;">
+        <p style="font-size: 0.9rem; color: #334155;">
+          ¿Cómo deseas inicializar el torneo?
+        </p>
+
+        <div style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
+          <button class="btn btn-primary" style="padding: 12px; justify-content: flex-start;" onclick="ejecutarNuevoTorneo(true)">
+            🔄 <strong>Reiniciar Marcadores</strong> (Conservar nombres y fotos actuales)
+          </button>
+
+          <button class="btn btn-outline" style="padding: 12px; justify-content: flex-start; color: #1e293b; border-color: #cbd5e1;" onclick="ejecutarNuevoTorneo(false)">
+            🆕 <strong>Torneo Nuevo en Blanco</strong> (Restaurar jugadores por defecto)
+          </button>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; width: 100%; margin-top: 10px;">
+          <button class="btn btn-outline btn-sm" style="color: #64748b; border: none;" onclick="cerrarModalNuevoTorneo()">
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPT GENERADOR DE QR OFFLINE -->
+  <script src="js/qrcode.js?v=20261017_5"></script>
+  <!-- SCRIPT DE LA APLICACIÓN -->
+  <script src="js/app.js?v=20261017_5"></script>
+
+</body>
+</html>

@@ -1,0 +1,1472 @@
+{
+  "titulo": "Control de Partidos - Torneo de Tenis de Mesa",
+  "fechaCreacion": "2026-10-17T17:47:50.739Z",
+  "grupos": [
+    {
+      "id": "A",
+      "nombre": "GRUPO A",
+      "jugadores": [
+        {
+          "id": "A1",
+          "nombre": "Víctor Rodríguez",
+          "foto": ""
+        },
+        {
+          "id": "A2",
+          "nombre": "Joseph Ferrini",
+          "foto": ""
+        },
+        {
+          "id": "A3",
+          "nombre": "Jarvis Gómez",
+          "foto": ""
+        },
+        {
+          "id": "A4",
+          "nombre": "Carlos Santana",
+          "foto": ""
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "nombre": "GRUPO B",
+      "jugadores": [
+        {
+          "id": "B1",
+          "nombre": "Néstor Noriega",
+          "foto": ""
+        },
+        {
+          "id": "B2",
+          "nombre": "Elio Perdomo",
+          "foto": ""
+        },
+        {
+          "id": "B3",
+          "nombre": "Rodolfo Troisi",
+          "foto": ""
+        },
+        {
+          "id": "B4",
+          "nombre": "Ernesto Brito",
+          "foto": ""
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "nombre": "GRUPO C",
+      "jugadores": [
+        {
+          "id": "C1",
+          "nombre": "Bernardo Castillo",
+          "foto": ""
+        },
+        {
+          "id": "C2",
+          "nombre": "Luis Cornivel",
+          "foto": ""
+        },
+        {
+          "id": "C3",
+          "nombre": "Allan García",
+          "foto": ""
+        },
+        {
+          "id": "C4",
+          "nombre": "Jose Anol",
+          "foto": ""
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "nombre": "GRUPO D",
+      "jugadores": [
+        {
+          "id": "D1",
+          "nombre": "Hugo Yanez",
+          "foto": ""
+        },
+        {
+          "id": "D2",
+          "nombre": "Cesar Antia",
+          "foto": ""
+        },
+        {
+          "id": "D3",
+          "nombre": "Carlos Hernández",
+          "foto": ""
+        },
+        {
+          "id": "D4",
+          "nombre": "Alexander Verde",
+          "foto": ""
+        }
+      ]
+    }
+  ],
+  "partidosGrupos": {
+    "A": [
+      {
+        "id": "M_A_1",
+        "mesa": "MESA 1",
+        "grupoId": "A",
+        "j1Id": "A1",
+        "j1Nombre": "Víctor Rodríguez",
+        "j2Id": "A2",
+        "j2Nombre": "Joseph Ferrini",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_A_2",
+        "mesa": "MESA 2",
+        "grupoId": "A",
+        "j1Id": "A3",
+        "j1Nombre": "Jarvis Gómez",
+        "j2Id": "A4",
+        "j2Nombre": "Carlos Santana",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_A_3",
+        "mesa": "MESA 3",
+        "grupoId": "A",
+        "j1Id": "A1",
+        "j1Nombre": "Víctor Rodríguez",
+        "j2Id": "A4",
+        "j2Nombre": "Carlos Santana",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_A_4",
+        "mesa": "MESA 4",
+        "grupoId": "A",
+        "j1Id": "A3",
+        "j1Nombre": "Jarvis Gómez",
+        "j2Id": "A2",
+        "j2Nombre": "Joseph Ferrini",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_A_5",
+        "mesa": "MESA 5",
+        "grupoId": "A",
+        "j1Id": "A1",
+        "j1Nombre": "Víctor Rodríguez",
+        "j2Id": "A3",
+        "j2Nombre": "Jarvis Gómez",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_A_6",
+        "mesa": "MESA 6",
+        "grupoId": "A",
+        "j1Id": "A4",
+        "j1Nombre": "Carlos Santana",
+        "j2Id": "A2",
+        "j2Nombre": "Joseph Ferrini",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      }
+    ],
+    "B": [
+      {
+        "id": "M_B_1",
+        "mesa": "MESA 1",
+        "grupoId": "B",
+        "j1Id": "B1",
+        "j1Nombre": "Néstor Noriega",
+        "j2Id": "B2",
+        "j2Nombre": "Elio Perdomo",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_B_2",
+        "mesa": "MESA 2",
+        "grupoId": "B",
+        "j1Id": "B3",
+        "j1Nombre": "Rodolfo Troisi",
+        "j2Id": "B4",
+        "j2Nombre": "Ernesto Brito",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_B_3",
+        "mesa": "MESA 3",
+        "grupoId": "B",
+        "j1Id": "B1",
+        "j1Nombre": "Néstor Noriega",
+        "j2Id": "B4",
+        "j2Nombre": "Ernesto Brito",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_B_4",
+        "mesa": "MESA 4",
+        "grupoId": "B",
+        "j1Id": "B3",
+        "j1Nombre": "Rodolfo Troisi",
+        "j2Id": "B2",
+        "j2Nombre": "Elio Perdomo",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_B_5",
+        "mesa": "MESA 5",
+        "grupoId": "B",
+        "j1Id": "B1",
+        "j1Nombre": "Néstor Noriega",
+        "j2Id": "B3",
+        "j2Nombre": "Rodolfo Troisi",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_B_6",
+        "mesa": "MESA 6",
+        "grupoId": "B",
+        "j1Id": "B4",
+        "j1Nombre": "Ernesto Brito",
+        "j2Id": "B2",
+        "j2Nombre": "Elio Perdomo",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      }
+    ],
+    "C": [
+      {
+        "id": "M_C_1",
+        "mesa": "MESA 1",
+        "grupoId": "C",
+        "j1Id": "C1",
+        "j1Nombre": "Bernardo Castillo",
+        "j2Id": "C2",
+        "j2Nombre": "Luis Cornivel",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_C_2",
+        "mesa": "MESA 2",
+        "grupoId": "C",
+        "j1Id": "C3",
+        "j1Nombre": "Allan García",
+        "j2Id": "C4",
+        "j2Nombre": "Jose Anol",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_C_3",
+        "mesa": "MESA 3",
+        "grupoId": "C",
+        "j1Id": "C1",
+        "j1Nombre": "Bernardo Castillo",
+        "j2Id": "C4",
+        "j2Nombre": "Jose Anol",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_C_4",
+        "mesa": "MESA 4",
+        "grupoId": "C",
+        "j1Id": "C3",
+        "j1Nombre": "Allan García",
+        "j2Id": "C2",
+        "j2Nombre": "Luis Cornivel",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_C_5",
+        "mesa": "MESA 5",
+        "grupoId": "C",
+        "j1Id": "C1",
+        "j1Nombre": "Bernardo Castillo",
+        "j2Id": "C3",
+        "j2Nombre": "Allan García",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_C_6",
+        "mesa": "MESA 6",
+        "grupoId": "C",
+        "j1Id": "C4",
+        "j1Nombre": "Jose Anol",
+        "j2Id": "C2",
+        "j2Nombre": "Luis Cornivel",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      }
+    ],
+    "D": [
+      {
+        "id": "M_D_1",
+        "mesa": "MESA 1",
+        "grupoId": "D",
+        "j1Id": "D1",
+        "j1Nombre": "Hugo Yanez",
+        "j2Id": "D2",
+        "j2Nombre": "Cesar Antia",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_D_2",
+        "mesa": "MESA 2",
+        "grupoId": "D",
+        "j1Id": "D3",
+        "j1Nombre": "Carlos Hernández",
+        "j2Id": "D4",
+        "j2Nombre": "Alexander Verde",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_D_3",
+        "mesa": "MESA 3",
+        "grupoId": "D",
+        "j1Id": "D1",
+        "j1Nombre": "Hugo Yanez",
+        "j2Id": "D4",
+        "j2Nombre": "Alexander Verde",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_D_4",
+        "mesa": "MESA 4",
+        "grupoId": "D",
+        "j1Id": "D3",
+        "j1Nombre": "Carlos Hernández",
+        "j2Id": "D2",
+        "j2Nombre": "Cesar Antia",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_D_5",
+        "mesa": "MESA 5",
+        "grupoId": "D",
+        "j1Id": "D1",
+        "j1Nombre": "Hugo Yanez",
+        "j2Id": "D3",
+        "j2Nombre": "Carlos Hernández",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      },
+      {
+        "id": "M_D_6",
+        "mesa": "MESA 6",
+        "grupoId": "D",
+        "j1Id": "D4",
+        "j1Nombre": "Alexander Verde",
+        "j2Id": "D2",
+        "j2Nombre": "Cesar Antia",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "finalizado": false,
+        "perdedorId": null,
+        "perdedorNombre": null
+      }
+    ]
+  },
+  "playoffs": {
+    "cuartos": [
+      {
+        "id": "Q1",
+        "codigo": "1A vs 2D",
+        "etiqueta": "Cuartos 1 (1A vs 2D)",
+        "origen1": "1° GRUPO A",
+        "origen2": "2° GRUPO D",
+        "j1Id": "A1",
+        "j1Nombre": "Víctor Rodríguez",
+        "j2Id": "D2",
+        "j2Nombre": "Cesar Antia",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "perdedorId": null,
+        "perdedorNombre": null,
+        "finalizado": false
+      },
+      {
+        "id": "Q2",
+        "codigo": "2A vs 1B",
+        "etiqueta": "Cuartos 2 (2A vs 1B)",
+        "origen1": "2° GRUPO A",
+        "origen2": "1° GRUPO B",
+        "j1Id": "A2",
+        "j1Nombre": "Joseph Ferrini",
+        "j2Id": "B1",
+        "j2Nombre": "Néstor Noriega",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "perdedorId": null,
+        "perdedorNombre": null,
+        "finalizado": false
+      },
+      {
+        "id": "Q3",
+        "codigo": "2B vs 1C",
+        "etiqueta": "Cuartos 3 (2B vs 1C)",
+        "origen1": "2° GRUPO B",
+        "origen2": "1° GRUPO C",
+        "j1Id": "B2",
+        "j1Nombre": "Elio Perdomo",
+        "j2Id": "C1",
+        "j2Nombre": "Bernardo Castillo",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "perdedorId": null,
+        "perdedorNombre": null,
+        "finalizado": false
+      },
+      {
+        "id": "Q4",
+        "codigo": "2C vs 1D",
+        "etiqueta": "Cuartos 4 (2C vs 1D)",
+        "origen1": "2° GRUPO C",
+        "origen2": "1° GRUPO D",
+        "j1Id": "C2",
+        "j1Nombre": "Luis Cornivel",
+        "j2Id": "D1",
+        "j2Nombre": "Hugo Yanez",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "perdedorId": null,
+        "perdedorNombre": null,
+        "finalizado": false
+      }
+    ],
+    "semis": [
+      {
+        "id": "SF1",
+        "codigo": "Semi Final 1",
+        "etiqueta": "Semi Final 1 (Ganador Q1 vs Ganador Q2)",
+        "origen1": "Ganador 1A vs 2D",
+        "origen2": "Ganador 2A vs 1B",
+        "j1Id": null,
+        "j1Nombre": "Ganador 1A vs 2D",
+        "j2Id": null,
+        "j2Nombre": "Ganador 2A vs 1B",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "perdedorId": null,
+        "perdedorNombre": null,
+        "finalizado": false
+      },
+      {
+        "id": "SF2",
+        "codigo": "Semi Final 2",
+        "etiqueta": "Semi Final 2 (Ganador Q3 vs Ganador Q4)",
+        "origen1": "Ganador 2B vs 1C",
+        "origen2": "Ganador 2C vs 1D",
+        "j1Id": null,
+        "j1Nombre": "Ganador 2B vs 1C",
+        "j2Id": null,
+        "j2Nombre": "Ganador 2C vs 1D",
+        "sets1": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "sets2": [
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        "ff1": false,
+        "ff2": false,
+        "ganadorId": null,
+        "ganadorNombre": null,
+        "perdedorId": null,
+        "perdedorNombre": null,
+        "finalizado": false
+      }
+    ],
+    "tercerLugar": {
+      "id": "TL",
+      "codigo": "Tercer Lugar",
+      "etiqueta": "Definición 3er y 4to Puesto",
+      "origen1": "Perdedor Semi Final 1",
+      "origen2": "Perdedor Semi Final 2",
+      "j1Id": null,
+      "j1Nombre": "Perdedor Semi Final 1",
+      "j2Id": null,
+      "j2Nombre": "Perdedor Semi Final 2",
+      "sets1": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "sets2": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "ff1": false,
+      "ff2": false,
+      "ganadorId": null,
+      "ganadorNombre": null,
+      "perdedorId": null,
+      "perdedorNombre": null,
+      "finalizado": false
+    },
+    "final": {
+      "id": "FIN",
+      "codigo": "Final",
+      "etiqueta": "Gran Final (Campeonato)",
+      "origen1": "Ganador Semi Final 1",
+      "origen2": "Ganador Semi Final 2",
+      "j1Id": null,
+      "j1Nombre": "Ganador Semi Final 1",
+      "j2Id": null,
+      "j2Nombre": "Ganador Semi Final 2",
+      "sets1": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "sets2": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "ff1": false,
+      "ff2": false,
+      "ganadorId": null,
+      "ganadorNombre": null,
+      "perdedorId": null,
+      "perdedorNombre": null,
+      "finalizado": false
+    }
+  },
+  "clasificadosGrupos": {
+    "GRUPO A": {
+      "p1": {
+        "id": "A1",
+        "nombre": "Víctor Rodríguez",
+        "foto": ""
+      },
+      "p2": {
+        "id": "A2",
+        "nombre": "Joseph Ferrini",
+        "foto": ""
+      },
+      "rankingCompleto": [
+        {
+          "id": "A1",
+          "nombre": "Víctor Rodríguez",
+          "foto": ""
+        },
+        {
+          "id": "A2",
+          "nombre": "Joseph Ferrini",
+          "foto": ""
+        },
+        {
+          "id": "A3",
+          "nombre": "Jarvis Gómez",
+          "foto": ""
+        },
+        {
+          "id": "A4",
+          "nombre": "Carlos Santana",
+          "foto": ""
+        }
+      ]
+    },
+    "GRUPO B": {
+      "p1": {
+        "id": "B1",
+        "nombre": "Néstor Noriega",
+        "foto": ""
+      },
+      "p2": {
+        "id": "B2",
+        "nombre": "Elio Perdomo",
+        "foto": ""
+      },
+      "rankingCompleto": [
+        {
+          "id": "B1",
+          "nombre": "Néstor Noriega",
+          "foto": ""
+        },
+        {
+          "id": "B2",
+          "nombre": "Elio Perdomo",
+          "foto": ""
+        },
+        {
+          "id": "B3",
+          "nombre": "Rodolfo Troisi",
+          "foto": ""
+        },
+        {
+          "id": "B4",
+          "nombre": "Ernesto Brito",
+          "foto": ""
+        }
+      ]
+    },
+    "GRUPO C": {
+      "p1": {
+        "id": "C1",
+        "nombre": "Bernardo Castillo",
+        "foto": ""
+      },
+      "p2": {
+        "id": "C2",
+        "nombre": "Luis Cornivel",
+        "foto": ""
+      },
+      "rankingCompleto": [
+        {
+          "id": "C1",
+          "nombre": "Bernardo Castillo",
+          "foto": ""
+        },
+        {
+          "id": "C2",
+          "nombre": "Luis Cornivel",
+          "foto": ""
+        },
+        {
+          "id": "C3",
+          "nombre": "Allan García",
+          "foto": ""
+        },
+        {
+          "id": "C4",
+          "nombre": "Jose Anol",
+          "foto": ""
+        }
+      ]
+    },
+    "GRUPO D": {
+      "p1": {
+        "id": "D1",
+        "nombre": "Hugo Yanez",
+        "foto": ""
+      },
+      "p2": {
+        "id": "D2",
+        "nombre": "Cesar Antia",
+        "foto": ""
+      },
+      "rankingCompleto": [
+        {
+          "id": "D1",
+          "nombre": "Hugo Yanez",
+          "foto": ""
+        },
+        {
+          "id": "D2",
+          "nombre": "Cesar Antia",
+          "foto": ""
+        },
+        {
+          "id": "D3",
+          "nombre": "Carlos Hernández",
+          "foto": ""
+        },
+        {
+          "id": "D4",
+          "nombre": "Alexander Verde",
+          "foto": ""
+        }
+      ]
+    }
+  },
+  "tablaGeneral": [
+    {
+      "jugador": "Víctor Rodríguez",
+      "id": "A1",
+      "foto": "",
+      "grupo": "GRUPO A",
+      "pj": 0,
+      "g": 0,
+      "p": 0,
+      "ff": 0,
+      "setsG": 0,
+      "setsP": 0,
+      "pts": 0,
+      "difSets": 0
+    },
+    {
+      "jugador": "Joseph Ferrini",
+      "id": "A2",
+      "foto": "",
+      "grupo": "GRUPO A",
+      "pj": 0,
+      "g": 0,
+      "p": 0,
+      "ff": 0,
+      "setsG": 0,
+      "setsP": 0,
+      "pts": 0,
+      "difSets": 0
+    },
+    {
+      "jugador": "Jarvis Gómez",
+      "id": "A3",
+      "foto": "",
+      "grupo": "GRUPO A",
+      "pj": 0,
+      "g": 0,
+      "p": 0,
+      "ff": 0,
+      "setsG": 0,
+      "setsP": 0,
+      "pts": 0,
+      "difSets": 0
+    },
+    {
+      "jugador": "Carlos Santana",
+      "id": "A4",
+      "foto": "",
+      "grupo": "GRUPO A",
+      "pj": 0,
+      "g": 0,
+      "p": 0,
+      "ff": 0,
+      "setsG": 0,
+      "setsP": 0,
+      "pts": 0,
+      "difSets": 0
+    },
+    {
+      "jugador": "Néstor Noriega",
+      "id": "B1",
+      "foto": "",
+      "grupo": "GRUPO B",
+      "pj": 0,
+      "g": 0,
+      "p": 0,
+      "ff": 0,
+      "setsG": 0,
+      "setsP": 0,
+      "pts": 0,
+      "difSets": 0
+    },
+    {
+      "jugador": "Elio Perdomo",
+      "id": "B2",
+      "foto": "",
+      "grupo": "GRUPO B",
+      "pj": 0,
+      "g": 0,
+      "p": 0,
+      "ff": 0,
+      "setsG": 0,
+      "setsP": 0,
+      "pts": 0,
+      "difSets": 0
+    },
+    {
+      "jugador": "Rodolfo Troisi",
+      "id": "B3",
+      "foto": "",
+      "grupo": "GRUPO B",
+      "pj": 0,
+      "g": 0,
+      "p": 0,
+      "ff": 0,
+      "setsG": 0,
+      "setsP": 0,
+      "pts": 0,
+      "difSets": 0
+    },
+    {
+      "jugador": "Ernesto Brito",
+      "id": "B4",
+      "foto": "",
+      "grupo": "GRUPO B",
+      "pj": 0,
+      "g": 0,
+      "p": 0,
+      "ff": 0,
+      "setsG": 0,
+      "setsP": 0,
+      "pts": 0,
+      "difSets": 0
+    },
+    {
+      "jugador": "Bernardo Castillo",
+      "id": "C1",
+      "foto": "",
+      "grupo": "GRUPO C",
+      "pj": 0,
+      "g": 0,
+      "p": 0,
+      "ff": 0,
+      "setsG": 0,
+      "setsP": 0,
+      "pts": 0,
+      "difSets": 0
+    },
+    {
+      "jugador": "Luis Cornivel",
+      "id": "C2",
+      "foto": "",
+      "grupo": "GRUPO C",
+      "pj": 0,
+      "g": 0,
+      "p": 0,
+      "ff": 0,
+      "setsG": 0,
+      "setsP": 0,
+      "pts": 0,
+      "difSets": 0
+    },
+    {
+      "jugador": "Allan García",
+      "id": "C3",
+      "foto": "",
+      "grupo": "GRUPO C",
+      "pj": 0,
+      "g": 0,
+      "p": 0,
+      "ff": 0,
+      "setsG": 0,
+      "setsP": 0,
+      "pts": 0,
+      "difSets": 0
+    },
+    {
+      "jugador": "Jose Anol",
+      "id": "C4",
+      "foto": "",
+      "grupo": "GRUPO C",
+      "pj": 0,
+      "g": 0,
+      "p": 0,
+      "ff": 0,
+      "setsG": 0,
+      "setsP": 0,
+      "pts": 0,
+      "difSets": 0
+    },
+    {
+      "jugador": "Hugo Yanez",
+      "id": "D1",
+      "foto": "",
+      "grupo": "GRUPO D",
+      "pj": 0,
+      "g": 0,
+      "p": 0,
+      "ff": 0,
+      "setsG": 0,
+      "setsP": 0,
+      "pts": 0,
+      "difSets": 0
+    },
+    {
+      "jugador": "Cesar Antia",
+      "id": "D2",
+      "foto": "",
+      "grupo": "GRUPO D",
+      "pj": 0,
+      "g": 0,
+      "p": 0,
+      "ff": 0,
+      "setsG": 0,
+      "setsP": 0,
+      "pts": 0,
+      "difSets": 0
+    },
+    {
+      "jugador": "Carlos Hernández",
+      "id": "D3",
+      "foto": "",
+      "grupo": "GRUPO D",
+      "pj": 0,
+      "g": 0,
+      "p": 0,
+      "ff": 0,
+      "setsG": 0,
+      "setsP": 0,
+      "pts": 0,
+      "difSets": 0
+    },
+    {
+      "jugador": "Alexander Verde",
+      "id": "D4",
+      "foto": "",
+      "grupo": "GRUPO D",
+      "pj": 0,
+      "g": 0,
+      "p": 0,
+      "ff": 0,
+      "setsG": 0,
+      "setsP": 0,
+      "pts": 0,
+      "difSets": 0
+    }
+  ],
+  "podio": {
+    "campeon": null,
+    "subcampeon": null,
+    "tercero": null,
+    "cuarto": null
+  }
+}

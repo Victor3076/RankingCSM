@@ -1,0 +1,11 @@
+{
+  "name": "torneo-tenis-mesa-web",
+  "version": "1.0.0",
+  "description": "Sistema local y LAN para gestión en tiempo real de torneos de Tenis de Mesa con fotos de participantes y podio",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "MIT"
+}
