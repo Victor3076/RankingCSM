@@ -113,7 +113,7 @@ function renderPodio(podio) {
     { key: 'campeon', label: '1° Lugar - Campeón', icon: '🏆', medal: '🥇', clase: 'campeon' },
     { key: 'subcampeon', label: '2° Lugar - Subcampeón', icon: '🥈', medal: '🥈', clase: 'subcampeon' },
     { key: 'tercero', label: '3° Lugar - Bronce', icon: '🥉', medal: '🥉', clase: 'tercero' },
-    { key: 'cuarto', label: '4° Puesto', icon: '🎖️', medal: '4°', clase: 'cuarto' }
+    { key: 'cuarto', label: 'Cuarto Puesto', icon: '🎖️', medal: '4°', clase: 'cuarto' }
   ];
 
   let html = '';
@@ -640,7 +640,7 @@ function renderModoTV(torneo) {
         </thead>
         <tbody>
     `;
-    torneo.tablaGeneral.slice(0, 8).forEach((f, idx) => {
+    torneo.tablaGeneral.forEach((f, idx) => {
       const avatar = generarAvatarHtml(f.foto, f.jugador, 'player-thumb-micro', 'micro-initials');
       html += `
         <tr>
