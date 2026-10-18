@@ -37,6 +37,16 @@
         </button>
 
 
+        <!-- Respaldo y Restauración de datos para celular y PC -->
+        <button class="btn btn-outline" onclick="descargarRespaldoJSON()" title="Descargar copia del torneo a este celular o PC">
+          💾 Respaldar
+        </button>
+
+        <button class="btn btn-outline" onclick="document.getElementById('input-archivo-respaldo').click()" title="Cargar un torneo respaldado">
+          📂 Restaurar
+        </button>
+        <input type="file" id="input-archivo-respaldo" accept=".json" style="display: none;" onchange="procesarArchivoRespaldo(event)">
+
         <button class="btn btn-outline" onclick="window.print()" title="Imprimir tabla y podio">
           🖨 Imprimir
         </button>
@@ -359,7 +369,7 @@
   <!-- SCRIPT GENERADOR DE QR OFFLINE -->
   <script src="js/qrcode.js?v=20261017_5"></script>
   <!-- SCRIPT DE LA APLICACIÓN -->
-  <script src="js/app.js?v=20261017_7"></script>
+  <script src="js/app.js?v=20261018_1"></script>
 
 </body>
 </html>

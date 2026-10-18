@@ -406,6 +406,29 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
+  // POST /api/restaurar-respaldo
+  if (pathname === '/api/restaurar-respaldo' && req.method === 'POST') {
+    try {
+      const data = await parsearJsonBody(req);
+      if (!data || !data.grupos || !data.partidosGrupos) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'El archivo de respaldo no es válido.' }));
+        return;
+      }
+
+      torneo = recalcularTorneo(data);
+      guardarDatos();
+      transmitirEstado();
+
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: true, torneo }));
+    } catch (err) {
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: err.message }));
+    }
+    return;
+  }
+
   // POST /api/cargar-ejemplo (cargar el ejemplo completado del Excel)
   if (pathname === '/api/cargar-ejemplo' && req.method === 'POST') {
     try {

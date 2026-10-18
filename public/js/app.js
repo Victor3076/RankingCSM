@@ -56,6 +56,10 @@ function iniciarSSE() {
       const data = JSON.parse(event.data);
       if (data.torneo) {
         estadoTorneo = data.torneo;
+        // Guardar copia de seguridad automática en la memoria interna del celular/PC
+        try {
+          localStorage.setItem('tt_torneo_backup_auto', JSON.stringify(estadoTorneo));
+        } catch (e) {}
         actualizarUI();
       }
     } catch (e) {
@@ -1140,4 +1144,82 @@ function cambiarPestana(idPestana) {
 
   if (btnNav) btnNav.classList.add('active');
   if (pane) pane.classList.add('active');
+}
+
+// ==========================================
+// RESPALDO Y RESTAURACIÓN (CELULAR Y PC)
+// ==========================================
+
+// 1. Descargar copia del torneo en archivo JSON
+function descargarRespaldoJSON() {
+  if (!estadoTorneo) {
+    alert('No hay datos de torneo cargados para respaldar.');
+    return;
+  }
+
+  try {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(estadoTorneo, null, 2));
+    const downloadAnchor = document.createElement('a');
+    const fecha = new Date().toISOString().slice(0, 10);
+    const hora = new Date().toTimeString().slice(0, 5).replace(':', '-');
+    
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", `torneo_csm_${fecha}_${hora}.json`);
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+
+    // Guardar también en localStorage del navegador
+    localStorage.setItem('tt_torneo_backup_manual', JSON.stringify(estadoTorneo));
+    alert('✔ Respaldo descargado exitosamente a tu dispositivo.');
+  } catch (err) {
+    alert('Error al generar respaldo: ' + err.message);
+  }
+}
+
+// 2. Procesar archivo de respaldo subido por el usuario
+async function procesarArchivoRespaldo(event) {
+  const input = event.target;
+  if (!input.files || input.files.length === 0) return;
+
+  const file = input.files[0];
+  const reader = new FileReader();
+
+  reader.onload = async (e) => {
+    try {
+      const contenido = JSON.parse(e.target.result);
+      if (!contenido.grupos || !contenido.partidosGrupos) {
+        alert('El archivo seleccionado no corresponde a un respaldo válido de este torneo.');
+        input.value = '';
+        return;
+      }
+
+      if (!confirm('¿Deseas restaurar este respaldo?\nSe reemplazarán los datos actuales por los del archivo.')) {
+        input.value = '';
+        return;
+      }
+
+      const res = await fetch('/api/restaurar-respaldo', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(contenido)
+      });
+
+      const resData = await res.json();
+      if (resData.ok) {
+        estadoTorneo = resData.torneo;
+        localStorage.setItem('tt_torneo_backup_auto', JSON.stringify(estadoTorneo));
+        actualizarUI();
+        alert('🎉 ¡Torneo restaurado con éxito!');
+      } else {
+        alert('Error al restaurar: ' + (resData.error || 'Respuesta no válida'));
+      }
+    } catch (err) {
+      alert('Error al leer el archivo JSON: ' + err.message);
+    } finally {
+      input.value = '';
+    }
+  };
+
+  reader.readAsText(file);
 }
